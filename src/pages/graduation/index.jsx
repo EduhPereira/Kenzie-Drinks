@@ -16,7 +16,7 @@ export const Graduation = () => {
       {graduationList.length > 0 ? (
         graduationList.map((item) => {
           return (
-            <Card>
+            <Card key={item.id}>
               <img src={item.image_url} alt="" />
               <Content>
                 <h2>{item.name}</h2>

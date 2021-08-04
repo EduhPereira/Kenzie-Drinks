@@ -14,7 +14,7 @@ export const Drinks = () => {
     <DrinksList id="DrinkList">
       <Title>Drinks</Title>
       {drinks.map((drink) => {
-        return <DrinkCard drink={drink} />;
+        return <DrinkCard key={drink.id} drink={drink} />;
       })}
       <Buttons>
         <a href="#DrinkList">
