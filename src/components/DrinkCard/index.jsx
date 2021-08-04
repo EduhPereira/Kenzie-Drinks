@@ -1,4 +1,11 @@
-import { Card, Content } from "./styles";
+import {
+  Card,
+  Content,
+  Button,
+  GraduationButton,
+  ConfraternizationButton,
+  Buttons,
+} from "./styles";
 import { useContext } from "react";
 import { ConfraternizationContext } from "../../providers/confraternization/confraternization";
 import { GraduationContext } from "../../providers/graduation/graduation";
@@ -25,45 +32,47 @@ export const DrinkCard = ({ drink }) => {
           {drink.volume.value} {drink.volume.unit}
         </span>
         <h3>Add to</h3>
-        <button
-          onClick={() => {
-            const newDrink = {
-              id: drink.id,
-              image_url: drink.image_url,
-              name: drink.name,
-            };
-            setWeddingList([...weddingList, newDrink]);
-            toast.success("Successfully Added");
-          }}
-        >
-          wedding
-        </button>
-        <button
-          onClick={() => {
-            const newDrink = {
-              id: drink.id,
-              image_url: drink.image_url,
-              name: drink.name,
-            };
-            setGraduationList([...graduationList, newDrink]);
-            toast.success("Successfully Added");
-          }}
-        >
-          graduation
-        </button>
-        <button
-          onClick={() => {
-            const newDrink = {
-              id: drink.id,
-              image_url: drink.image_url,
-              name: drink.name,
-            };
-            setConfraternizationList([...confraternizationList, newDrink]);
-            toast.success("Successfully Added");
-          }}
-        >
-          confraternization
-        </button>
+        <Buttons>
+          <Button
+            onClick={() => {
+              const newDrink = {
+                id: drink.id,
+                image_url: drink.image_url,
+                name: drink.name,
+              };
+              setWeddingList([...weddingList, newDrink]);
+              toast.success("Successfully Added");
+            }}
+          >
+            wedding
+          </Button>
+          <GraduationButton
+            onClick={() => {
+              const newDrink = {
+                id: drink.id,
+                image_url: drink.image_url,
+                name: drink.name,
+              };
+              setGraduationList([...graduationList, newDrink]);
+              toast.success("Successfully Added");
+            }}
+          >
+            graduation
+          </GraduationButton>
+          <ConfraternizationButton
+            onClick={() => {
+              const newDrink = {
+                id: drink.id,
+                image_url: drink.image_url,
+                name: drink.name,
+              };
+              setConfraternizationList([...confraternizationList, newDrink]);
+              toast.success("Successfully Added");
+            }}
+          >
+            confraternization
+          </ConfraternizationButton>
+        </Buttons>
       </Content>
     </Card>
   );

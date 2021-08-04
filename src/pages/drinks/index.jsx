@@ -11,15 +11,19 @@ import {
 export const Drinks = () => {
   const { drinks, page, nextPage, previousPage } = useContext(DrinksContext);
   return (
-    <DrinksList>
+    <DrinksList id="DrinkList">
       <Title>Drinks</Title>
       {drinks.map((drink) => {
         return <DrinkCard drink={drink} />;
       })}
       <Buttons>
-        <PreviousButton onClick={previousPage}>Previous</PreviousButton>
+        <a href="#DrinkList">
+          <PreviousButton onClick={previousPage}>Previous</PreviousButton>
+        </a>
         <span>{page}</span>
-        <NextButton onClick={nextPage}>Next</NextButton>
+        <a href="#DrinkList">
+          <NextButton onClick={nextPage}>Next</NextButton>
+        </a>
       </Buttons>
     </DrinksList>
   );

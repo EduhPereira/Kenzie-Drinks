@@ -4,3 +4,8 @@
   box-sizing: border-box;
   font-family: monospace;
 }
+
+.App {
+  background-color: rgb(238, 238, 238);
+  min-height: 100vh;
+}

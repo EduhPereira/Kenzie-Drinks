@@ -7,6 +7,7 @@ export const Title = styled.h1`
   text-align: center;
   border: 2px solid #70d602;
   color: #70d602;
+  background-color: #0f0f0f;
   boxbox-shadow: 10px 11px 0px 0px rgba(7, 64, 2, 0.75);
   -webkit-box-shadow: 10px 11px 0px 0px rgba(7, 64, 2, 0.75);
   -moz-box-shadow: 10px 11px 0px 0px rgba(7, 64, 2, 0.75);
