@@ -1,11 +1,18 @@
 import { useContext } from "react";
 import { DrinksContext } from "../../providers/drinks/drinks";
 import { DrinkCard } from "../../components/DrinkCard";
-import { DrinksList, Buttons, NextButton, PreviousButton } from "./styles";
+import {
+  DrinksList,
+  Title,
+  Buttons,
+  NextButton,
+  PreviousButton,
+} from "./styles";
 export const Drinks = () => {
   const { drinks, page, nextPage, previousPage } = useContext(DrinksContext);
   return (
     <DrinksList>
+      <Title>Drinks</Title>
       {drinks.map((drink) => {
         return <DrinkCard drink={drink} />;
       })}

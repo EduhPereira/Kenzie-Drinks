@@ -1,5 +1,15 @@
 import { Card, Content } from "./styles";
+import { useContext } from "react";
+import { ConfraternizationContext } from "../../providers/confraternization/confraternization";
+import { GraduationContext } from "../../providers/graduation/graduation";
+import { WeddingContext } from "../../providers/wedding/wedding";
 export const DrinkCard = ({ drink }) => {
+  const { confraternizationList, setConfraternizationList } = useContext(
+    ConfraternizationContext
+  );
+  const { graduationList, setGraduationList } = useContext(GraduationContext);
+  const { weddingList, setWeddingList } = useContext(WeddingContext);
+
   return (
     <Card>
       <img src={drink.image_url} alt="" />
@@ -14,9 +24,42 @@ export const DrinkCard = ({ drink }) => {
           {drink.volume.value} {drink.volume.unit}
         </span>
         <h3>Add to</h3>
-        <button>wedding</button>
-        <button>graduation</button>
-        <button>confraternization</button>
+        <button
+          onClick={() => {
+            const newDrink = {
+              id: drink.id,
+              image_url: drink.image_url,
+              name: drink.name,
+            };
+            setWeddingList([...weddingList, newDrink]);
+          }}
+        >
+          wedding
+        </button>
+        <button
+          onClick={() => {
+            const newDrink = {
+              id: drink.id,
+              image_url: drink.image_url,
+              name: drink.name,
+            };
+            setGraduationList([...graduationList, newDrink]);
+          }}
+        >
+          graduation
+        </button>
+        <button
+          onClick={() => {
+            const newDrink = {
+              id: drink.id,
+              image_url: drink.image_url,
+              name: drink.name,
+            };
+            setConfraternizationList([...confraternizationList, newDrink]);
+          }}
+        >
+          confraternization
+        </button>
       </Content>
     </Card>
   );

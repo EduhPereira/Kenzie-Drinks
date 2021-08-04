@@ -1,4 +1,20 @@
 import styled from "styled-components";
+export const Title = styled.h1`
+  font-size: 28px;
+  width: 200px;
+  margin: 100px auto;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #70d602;
+  color: #70d602;
+  boxbox-shadow: 10px 11px 0px 0px rgba(7, 64, 2, 0.75);
+  -webkit-box-shadow: 10px 11px 0px 0px rgba(7, 64, 2, 0.75);
+  -moz-box-shadow: 10px 11px 0px 0px rgba(7, 64, 2, 0.75);
+  @media (min-width: 768px) {
+    margin: 20px auto;
+  }
+`;
+
 export const DrinksList = styled.div`
   display: flex;
   flex-direction: column;
