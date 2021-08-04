@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { WeddingContext } from "../../providers/wedding/wedding";
 import { Title, Container, Card, Content } from "./styles";
+import { toast } from "react-toastify";
 export const Wedding = () => {
   const { weddingList, setWeddingList } = useContext(WeddingContext);
   return (
@@ -18,6 +19,7 @@ export const Wedding = () => {
                     (drink) => drink.id !== item.id
                   );
                   setWeddingList(newList);
+                  toast.success("Successfully Removed");
                 }}
               >
                 Remove

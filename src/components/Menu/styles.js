@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const Icon = styled.div`
+  display: none;
+  font-size: 32px;
+  color: #70d602;
+  @media (min-width: 768px) {
+    display: unset;
+  }
+`;
+
 export const Menu = styled.header`
   display: flex;
   padding: 10px;
@@ -24,5 +33,10 @@ export const Menu = styled.header`
     font-weight: 700;
     margin: 20px 0;
     cursor: pointer;
+    transition: all 0.3s linear;
+
+    :hover {
+      color: #70d602;
+    }
   }
 `;

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ConfraternizationContext } from "../../providers/confraternization/confraternization";
 import { GraduationContext } from "../../providers/graduation/graduation";
 import { WeddingContext } from "../../providers/wedding/wedding";
+import { toast } from "react-toastify";
 export const DrinkCard = ({ drink }) => {
   const { confraternizationList, setConfraternizationList } = useContext(
     ConfraternizationContext
@@ -32,6 +33,7 @@ export const DrinkCard = ({ drink }) => {
               name: drink.name,
             };
             setWeddingList([...weddingList, newDrink]);
+            toast.success("Successfully Added");
           }}
         >
           wedding
@@ -44,6 +46,7 @@ export const DrinkCard = ({ drink }) => {
               name: drink.name,
             };
             setGraduationList([...graduationList, newDrink]);
+            toast.success("Successfully Added");
           }}
         >
           graduation
@@ -56,6 +59,7 @@ export const DrinkCard = ({ drink }) => {
               name: drink.name,
             };
             setConfraternizationList([...confraternizationList, newDrink]);
+            toast.success("Successfully Added");
           }}
         >
           confraternization
