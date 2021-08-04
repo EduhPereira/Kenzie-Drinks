@@ -31,7 +31,7 @@ export const DrinksProvider = ({ children }) => {
   }, [page]);
 
   return (
-    <DrinksContext.Provider value={{ drinks, nextPage, previousPage }}>
+    <DrinksContext.Provider value={{ drinks, page, nextPage, previousPage }}>
       {children}
     </DrinksContext.Provider>
   );

@@ -4,10 +4,19 @@ export const DrinkCard = ({ drink }) => {
     <Card>
       <img src={drink.image_url} alt="" />
       <Content>
-        <h3>{drink.name}</h3>
+        <h2>{drink.name}</h2>
+        <h3>First Brewed</h3>
         <span>{drink.first_brewed}</span>
+        <h3>Description</h3>
         <p>{drink.description}</p>
-        <span>{drink.volume.value}</span>
+        <h3>Volume</h3>
+        <span>
+          {drink.volume.value} {drink.volume.unit}
+        </span>
+        <h3>Add to</h3>
+        <button>wedding</button>
+        <button>graduation</button>
+        <button>confraternization</button>
       </Content>
     </Card>
   );

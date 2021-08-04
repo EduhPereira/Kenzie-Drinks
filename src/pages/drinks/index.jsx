@@ -1,16 +1,19 @@
 import { useContext } from "react";
 import { DrinksContext } from "../../providers/drinks/drinks";
 import { DrinkCard } from "../../components/DrinkCard";
+import { DrinksList, Buttons, NextButton, PreviousButton } from "./styles";
 export const Drinks = () => {
-  const { drinks, nextPage, previousPage } = useContext(DrinksContext);
+  const { drinks, page, nextPage, previousPage } = useContext(DrinksContext);
   return (
-    <>
-      <h1>Drinks</h1>
+    <DrinksList>
       {drinks.map((drink) => {
         return <DrinkCard drink={drink} />;
       })}
-      <button onClick={previousPage}>Previous</button>
-      <button onClick={nextPage}>Next</button>
-    </>
+      <Buttons>
+        <PreviousButton onClick={previousPage}>Previous</PreviousButton>
+        <span>{page}</span>
+        <NextButton onClick={nextPage}>Next</NextButton>
+      </Buttons>
+    </DrinksList>
   );
 };
